@@ -10,6 +10,7 @@ import Foundation
 class MockURLProtocol: URLProtocol {
     
     static var stubResponseData: Data?
+    static var error: Error?
     
     override class func canInit(with request: URLRequest) -> Bool {
         true
@@ -20,7 +21,12 @@ class MockURLProtocol: URLProtocol {
     }
     
     override func startLoading() {
-        client?.urlProtocol(self, didLoad: MockURLProtocol.stubResponseData ?? Data())
+        if let signupError = MockURLProtocol.error {
+            client?.urlProtocol(self, didFailWithError: signupError)
+        } else {
+            client?.urlProtocol(self, didLoad: MockURLProtocol.stubResponseData ?? Data())
+        }
+        
         client?.urlProtocolDidFinishLoading(self)
     }
     
