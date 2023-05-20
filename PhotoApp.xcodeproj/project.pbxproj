@@ -15,6 +15,9 @@
 		554A6F562A18B79F0041BA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554A6F542A18B79F0041BA63 /* LaunchScreen.storyboard */; };
 		554A6F7A2A18B85A0041BA63 /* SignupFormModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F792A18B85A0041BA63 /* SignupFormModelValidatorTests.swift */; };
 		554A6F7C2A18B9C40041BA63 /* SignupFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7B2A18B9C40041BA63 /* SignupFormModelValidator.swift */; };
+		554A6F7F2A18C2F20041BA63 /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7D2A18C2F20041BA63 /* PhotoAppUITests.swift */; };
+		554A6F802A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */; };
+		554A6F822A18D57D0041BA63 /* SignupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F812A18D57D0041BA63 /* SignupConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		554A6F662A18B79F0041BA63 /* PhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		554A6F792A18B85A0041BA63 /* SignupFormModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidatorTests.swift; sourceTree = "<group>"; };
 		554A6F7B2A18B9C40041BA63 /* SignupFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidator.swift; sourceTree = "<group>"; };
+		554A6F7D2A18C2F20041BA63 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
+		554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		554A6F812A18D57D0041BA63 /* SignupConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 				554A6F542A18B79F0041BA63 /* LaunchScreen.storyboard */,
 				554A6F572A18B79F0041BA63 /* Info.plist */,
 				554A6F7B2A18B9C40041BA63 /* SignupFormModelValidator.swift */,
+				554A6F812A18D57D0041BA63 /* SignupConstants.swift */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -120,6 +127,8 @@
 		554A6F692A18B79F0041BA63 /* PhotoAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				554A6F7D2A18C2F20041BA63 /* PhotoAppUITests.swift */,
+				554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */,
 			);
 			path = PhotoAppUITests;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 					};
 					554A6F652A18B79F0041BA63 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 						TestTargetID = 554A6F452A18B79E0041BA63;
 					};
 				};
@@ -259,6 +269,7 @@
 				554A6F4E2A18B79E0041BA63 /* ViewController.swift in Sources */,
 				554A6F4A2A18B79E0041BA63 /* AppDelegate.swift in Sources */,
 				554A6F7C2A18B9C40041BA63 /* SignupFormModelValidator.swift in Sources */,
+				554A6F822A18D57D0041BA63 /* SignupConstants.swift in Sources */,
 				554A6F4C2A18B79E0041BA63 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554A6F802A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift in Sources */,
+				554A6F7F2A18C2F20041BA63 /* PhotoAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,15 +557,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroup.PhotoAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PhotoApp;
@@ -563,10 +583,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iniongungroup.PhotoAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

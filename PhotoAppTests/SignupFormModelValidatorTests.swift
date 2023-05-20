@@ -29,7 +29,73 @@ final class SignupFormModelValidatorTests: XCTestCase {
     func testIsValidFirstName_WhenShortFirstNameProvided_ShouldReturnFalse() {
         let isFirstNameValid = sut.isFirstNameValid(firstName: "I")
         
-        XCTAssertFalse(isFirstNameValid, "The isFirstName method should return FALSE when value is less than 2 characters")
+        XCTAssertFalse(isFirstNameValid, "The isFirstName() method should return FALSE when value is less than \(SignupConstants.firstNameMinLength) characters")
+    }
+    
+    func testIsFirstNameValid_WhenTooLongFirstNameProvided_ShouldReturnFalse() {
+        let isFirstNameValid = sut.isFirstNameValid(firstName: "IniongunIniongun")
+        
+        XCTAssertFalse(isFirstNameValid, "The isFirstName() method should return FALSE when value is greater than \(SignupConstants.firstNameMaxLength) characters")
+    }
+    
+    func testIsLastNameValid_WhenValidLastNameProvided_ShouldReturnTrue() {
+        let isValid = sut.isLastNameValid("Iniongun")
+        XCTAssertTrue(isValid, "The isLastNameValid() method should return TRUE for a valid value")
+    }
+    
+    func testIsLastNameValid_WhenEmptyLastNameProvided_ShouldReturnFalse() {
+        let isValid = sut.isLastNameValid("")
+        XCTAssertFalse(isValid, "The isLastNameValid() method should return FALSE for an empty value")
+    }
+    
+    func testIsLastNameValid_WhenTooShortLastNameProvided_ShouldReturnFalse() {
+        let isValid = sut.isLastNameValid("X")
+        XCTAssertFalse(isValid, "The isLastNameValid() method should return FALSE for a value that is less than \(SignupConstants.lastNameMinLength)")
+    }
+    
+    func testIsLastNameValid_WhenTooLongLastNameProvided_ShouldReturnFalse() {
+        let isValid = sut.isLastNameValid("XIniongunIniongun")
+        XCTAssertFalse(isValid, "The isLastNameValid() method should return FALSE for a value that is greater than \(SignupConstants.lastNameMaxLength)")
+    }
+    
+    func testIsEmailValid_WhenEmptyEmailProvided_ShouldReturnFalse() {
+        let isValid = sut.isValidEmail("")
+        XCTAssertFalse(isValid, "The isValidEmail() method should return FALSE when an empty value is provided")
+    }
+    
+    func testIsEmailValid_WhenValidEmailProvided_ShouldReturnTrue() {
+        let isValid = sut.isValidEmail("isaac@gmail.com")
+        XCTAssertTrue(isValid, "The isValidEmail() method should return TRU when valid value is provided")
+    }
+    
+    func testIsEmailValid_WhenNoAtCharacterProvided_ShouldReturnFalse() {
+        let isValid = sut.isValidEmail("isaac.com")
+        XCTAssertFalse(isValid, "The isValidEmail() method should return FALSE when value provided does not contain an @ character")
+    }
+    
+    func testIsEmailValid_WhenNoDotCharacterProvided_ShouldReturnFalse() {
+        let isValid = sut.isValidEmail("isaac@com")
+        XCTAssertFalse(isValid, "The isValidEmail() method should return FALSE when value provided does not contain a . character")
+    }
+    
+    func testIsPasswordValid_WhenEmptyPasswordProvided_ShouldReturnFalse() {
+        let isValid = sut.isPasswordValid("")
+        XCTAssertFalse(isValid, "The isPasswordValid() method should return FALSE when an empty value is provided")
+    }
+    
+    func testIsPasswordValid_WhenTooShortPasswordProvided_ShouldReturnFalse() {
+        let isValid = sut.isPasswordValid("11")
+        XCTAssertFalse(isValid, "The isPasswordValid() method should return FALSE when provided value is less than \(SignupConstants.passwordMinLength) characters")
+    }
+    
+    func testIsPasswordValid_WhenTooLongPasswordProvided_ShouldReturnFalse() {
+        let isValid = sut.isPasswordValid("123456789")
+        XCTAssertFalse(isValid, "The isPasswordValid() method should return FALSE when provided value is greater than \(SignupConstants.passwordMaxLength) characters")
+    }
+    
+    func testIsPasswordValid_WhenValidPasswordProvided_ShouldReturnTrue() {
+        let isValid = sut.isPasswordValid("1111")
+        XCTAssertFalse(isValid, "The isPasswordValid() method should return TRUE when provided value is between \(SignupConstants.passwordMinLength) and \(SignupConstants.passwordMaxLength) characters")
     }
 
 }
