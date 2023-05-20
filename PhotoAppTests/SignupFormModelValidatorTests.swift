@@ -95,7 +95,17 @@ final class SignupFormModelValidatorTests: XCTestCase {
     
     func testIsPasswordValid_WhenValidPasswordProvided_ShouldReturnTrue() {
         let isValid = sut.isPasswordValid("1111")
-        XCTAssertFalse(isValid, "The isPasswordValid() method should return TRUE when provided value is between \(SignupConstants.passwordMinLength) and \(SignupConstants.passwordMaxLength) characters")
+        XCTAssertTrue(isValid, "The isPasswordValid() method should return TRUE when provided value is between \(SignupConstants.passwordMinLength) and \(SignupConstants.passwordMaxLength) characters")
+    }
+    
+    func testDoPasswordsMatch_WhenEqualPasswordsProvided_ShouldReturnTrue() {
+        let match = sut.doPasswordsMatch(password: "1234", repeatPassword: "1234")
+        XCTAssertTrue(match, "doPasswordsMatch() should return TRUE for a matching pair")
+    }
+    
+    func testDoPasswordsMatch_WhenNotMatchingPasswordsProvided_ShouldReturnFalse() {
+        let match = sut.doPasswordsMatch(password: "12345", repeatPassword: "1234")
+        XCTAssertFalse(match, "doPasswordsMatch() should return FALSE when passwords provided do not match")
     }
 
 }
