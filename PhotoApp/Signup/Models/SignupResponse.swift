@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SignupResponse: Codable {
+struct SignupResponse: Codable, Equatable {
     let status: String
 }

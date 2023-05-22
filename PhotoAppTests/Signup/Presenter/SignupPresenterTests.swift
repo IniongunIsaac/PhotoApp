@@ -55,12 +55,29 @@ final class SignupPresenterTests: XCTestCase {
     func testSignup_WhenSuccessful_ShouldCallSuccessOnView() {
         let expectation = expectation(description: "Expect successfulSignup() method to be called")
         mockSignupViewDelegate.expectation = expectation
+        let response = SignupResponse(status: "Ok")
+        mockSignupWebservice.response = response
         
         presenter.processUserSignup(formModel: signupModel)
         
         wait(for: [expectation], timeout: 5)
         
-        XCTAssertEqual(mockSignupViewDelegate.successfulSignupCounter, 1, "The successfulSignup() method was called more than one time")
+        XCTAssertEqual(mockSignupViewDelegate.successfulSignupCounter, 1, "The successfulSignup() method was called more than one time or it wasn't called at all")
+        XCTAssertEqual(mockSignupWebservice.response, response, "Returned response is not the same as the defined response")
+    }
+    
+    func testSignup_WhenError_ShouldCallErrorHandlerOnView() {
+        let expectation = expectation(description: "Expect that the errorHandler() method is called on the view")
+        mockSignupViewDelegate.expectation = expectation
+        let error = SignupError.invalidURL
+        mockSignupWebservice.error = error
+        
+        presenter.processUserSignup(formModel: signupModel)
+        
+        wait(for: [expectation], timeout: 1)
+        
+        XCTAssertEqual(mockSignupViewDelegate.successfulErrorHandlerCounter, 1, "The errorHandler() method was either called more than once or not at all")
+        XCTAssertEqual(mockSignupWebservice.error, error, "Returned error does not match the expected error defined")
     }
 
 }

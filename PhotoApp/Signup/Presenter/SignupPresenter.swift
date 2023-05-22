@@ -52,8 +52,8 @@ final class SignupPresenter {
             if let response {
                 self?.viewDelegate?.successfulSignup()
                 return
-            } else {
-                self?.viewDelegate?.errorHandler(error: error!)
+            } else if let error {
+                self?.viewDelegate?.errorHandler(error: error)
             }
         }
     }
