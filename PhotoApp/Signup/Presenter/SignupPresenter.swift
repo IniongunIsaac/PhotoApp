@@ -11,10 +11,15 @@ final class SignupPresenter {
     
     private let validator: SignupFormModelValidatorProtocol
     private let webservice: SignupWebserviceProtocol
+    private weak var viewDelegate: SignupViewDelegateProtocol?
     
-    init(validator: SignupFormModelValidatorProtocol, webservice: SignupWebserviceProtocol) {
+    init(validator: SignupFormModelValidatorProtocol,
+         webservice: SignupWebserviceProtocol,
+         viewDelegate: SignupViewDelegateProtocol?
+    ) {
         self.validator = validator
         self.webservice = webservice
+        self.viewDelegate = viewDelegate
     }
     
     func processUserSignup(formModel: SignupFormModel) {
@@ -43,8 +48,13 @@ final class SignupPresenter {
                                              email: formModel.email,
                                              password: formModel.password)
         
-        webservice.signup(request: request) { response, error in
-            
+        webservice.signup(request: request) { [weak self] response, error in
+            if let response {
+                self?.viewDelegate?.successfulSignup()
+                return
+            } else {
+                self?.viewDelegate?.errorHandler(error: error!)
+            }
         }
     }
 }
