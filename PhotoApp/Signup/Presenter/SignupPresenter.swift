@@ -10,9 +10,11 @@ import Foundation
 final class SignupPresenter {
     
     private let validator: SignupFormModelValidatorProtocol
+    private let webservice: SignupWebserviceProtocol
     
-    init(validator: SignupFormModelValidatorProtocol) {
+    init(validator: SignupFormModelValidatorProtocol, webservice: SignupWebserviceProtocol) {
         self.validator = validator
+        self.webservice = webservice
     }
     
     func processUserSignup(formModel: SignupFormModel) {
@@ -34,6 +36,15 @@ final class SignupPresenter {
         
         if !validator.doPasswordsMatch(password: formModel.password, repeatPassword: formModel.repeatPassword) {
             return
+        }
+        
+        let request = SignupFormRequestModel(firstName: formModel.firstName,
+                                             lastName: formModel.lastName,
+                                             email: formModel.email,
+                                             password: formModel.password)
+        
+        webservice.signup(request: request) { response, error in
+            
         }
     }
 }
