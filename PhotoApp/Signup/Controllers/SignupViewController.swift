@@ -22,11 +22,25 @@ final class SignupViewController: UIViewController {
         super.viewDidLoad()
         if presenter == nil {
             let validator = SignupFormModelValidator()
-            let webservice = SignupWebservice(urlString: SignupConstants.signupURL)
+            let signupURL = ProcessInfo.processInfo.environment["signupURL"] ?? SignupConstants.signupURL
+            let webservice = SignupWebservice(urlString: signupURL)
             presenter = SignupPresenter(validator: validator,
                                         webservice: webservice,
                                         viewDelegate: self)
         }
+        readLaunchArguments()
+    }
+    
+    private func readLaunchArguments() {
+        #if DEBUG
+        if CommandLine.arguments.contains("-skipSurvey") {
+            print("Skipping the survey flow...")
+        }
+        
+        if ProcessInfo.processInfo.arguments.contains("-skipSurvey") {
+            print("Skipping the survey flow...")
+        }
+        #endif
     }
 
     @IBAction func showButtonViewControllerTapped(_ sender: Any) {
