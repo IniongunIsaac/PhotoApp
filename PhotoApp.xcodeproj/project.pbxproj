@@ -14,7 +14,7 @@
 		554A6F562A18B79F0041BA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554A6F542A18B79F0041BA63 /* LaunchScreen.storyboard */; };
 		554A6F7A2A18B85A0041BA63 /* SignupFormModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F792A18B85A0041BA63 /* SignupFormModelValidatorTests.swift */; };
 		554A6F7C2A18B9C40041BA63 /* SignupFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7B2A18B9C40041BA63 /* SignupFormModelValidator.swift */; };
-		554A6F7F2A18C2F20041BA63 /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7D2A18C2F20041BA63 /* PhotoAppUITests.swift */; };
+		554A6F7F2A18C2F20041BA63 /* SignupFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7D2A18C2F20041BA63 /* SignupFlowUITests.swift */; };
 		554A6F802A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */; };
 		554A6F822A18D57D0041BA63 /* SignupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F812A18D57D0041BA63 /* SignupConstants.swift */; };
 		554A6F842A18FD0C0041BA63 /* SignupWebserviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554A6F832A18FD0C0041BA63 /* SignupWebserviceTests.swift */; };
@@ -72,7 +72,7 @@
 		554A6F662A18B79F0041BA63 /* PhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		554A6F792A18B85A0041BA63 /* SignupFormModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidatorTests.swift; sourceTree = "<group>"; };
 		554A6F7B2A18B9C40041BA63 /* SignupFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidator.swift; sourceTree = "<group>"; };
-		554A6F7D2A18C2F20041BA63 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
+		554A6F7D2A18C2F20041BA63 /* SignupFlowUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupFlowUITests.swift; sourceTree = "<group>"; };
 		554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		554A6F812A18D57D0041BA63 /* SignupConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConstants.swift; sourceTree = "<group>"; };
 		554A6F832A18FD0C0041BA63 /* SignupWebserviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWebserviceTests.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		554A6F692A18B79F0041BA63 /* PhotoAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				554A6F7D2A18C2F20041BA63 /* PhotoAppUITests.swift */,
+				554A6F7D2A18C2F20041BA63 /* SignupFlowUITests.swift */,
 				554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */,
 			);
 			path = PhotoAppUITests;
@@ -491,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				554A6F802A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift in Sources */,
-				554A6F7F2A18C2F20041BA63 /* PhotoAppUITests.swift in Sources */,
+				554A6F7F2A18C2F20041BA63 /* SignupFlowUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
