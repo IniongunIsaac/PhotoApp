@@ -29,6 +29,13 @@ final class SignupViewController: UIViewController {
         }
     }
 
+    @IBAction func showButtonViewControllerTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+        secondViewController.view.accessibilityIdentifier = "SecondViewController"
+        present(secondViewController, animated: true)
+    }
+    
     @IBAction func signupButtonTapped(_ sender: Any) {
         let formModel = SignupFormModel(firstName: firstNameTextField.text!,
                                         lastName: lastNameTextField.text!,
@@ -41,7 +48,12 @@ final class SignupViewController: UIViewController {
 
 extension SignupViewController: SignupViewDelegateProtocol {
     func successfulSignup() {
-        //TODO:
+        let alert = UIAlertController(title: "Success", message: "Your request was successful", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default))
+        DispatchQueue.main.async {
+            alert.view.accessibilityIdentifier = "successAlertDialog"
+            self.present(alert, animated: true)
+        }
     }
     
     func errorHandler(error: SignupError) {

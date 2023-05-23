@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-ci-4rc">
-                                <rect key="frame" x="16" y="59" width="361" height="304.33333333333331"/>
+                                <rect key="frame" x="16" y="59" width="361" height="358.66666666666669"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-NY-JP9">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
@@ -56,6 +56,15 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
                                         <connections>
                                             <action selector="signupButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kj8-dp-hKU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQD-Ht-rHB">
+                                        <rect key="frame" x="0.0" y="324.33333333333331" width="361" height="34.333333333333314"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="showViewControllerButton"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Show ViewController"/>
+                                        <connections>
+                                            <action selector="showButtonViewControllerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5S-eX-dvO"/>
                                         </connections>
                                     </button>
                                 </subviews>

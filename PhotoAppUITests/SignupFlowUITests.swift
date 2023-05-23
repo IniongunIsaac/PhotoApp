@@ -74,6 +74,45 @@ final class SignupFlowUITests: XCTestCase {
         
         XCTAssertTrue(app.alerts["errorAlertDialog"].waitForExistence(timeout: 1), "An error alert dialog was not presented when an invalid form was submitted")
     }
+    
+    func testViewController_WhenValidFormSubmitted_PresentsSuccessAlertDialog() {
+        firstNameTextField.tap()
+        firstNameTextField.typeText("Isaac")
+
+        lastNameTextField.tap()
+        lastNameTextField.typeText("Progress")
+
+        emailTextField.tap()
+        emailTextField.typeText("isaac@gmail.com")
+
+        passwordTextField.tap()
+        passwordTextField.typeText("12345678") // Issue exists with typing text in secure textfields, doesn't work so test case is failing.
+
+        repeatPasswordTextField.tap()
+        repeatPasswordTextField.typeText("12345678")
+
+        signupButton.tap()
+
+        XCTAssertTrue(app.alerts["successAlertDialog"].waitForExistence(timeout: 10), "A success alert dialog was not presented when a valid form was submitted")
+                
+    }
+    
+    func testViewController_WhenShowViewControllerButtonTapped_PresentsSecondViewController() {
+        app.buttons["showViewControllerButton"].tap()
+        
+        XCTAssertTrue(app.otherElements["SecondViewController"].waitForExistence(timeout: 1), "SecondViewController should be presented")
+    }
+    
+    private func typeSecureText(textField: XCUIElement, secureText: String) {
+        textField.tap()
+        
+        let deleteKey = app.keys["delete"]
+        deleteKey.tap()
+        
+        for character in secureText {
+            app.keys[String(character)].tap()
+        }
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
