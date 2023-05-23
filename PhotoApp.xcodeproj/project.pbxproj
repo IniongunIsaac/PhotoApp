@@ -40,6 +40,7 @@
 		55DCA6DB2A1CF479001BC0AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DCA6DA2A1CF479001BC0AF /* SecondViewController.swift */; };
 		55DCA6DE2A1CF5D7001BC0AF /* ViewControllerNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DCA6DD2A1CF5D7001BC0AF /* ViewControllerNavigationTests.swift */; };
 		55DCA6E12A1CF637001BC0AF /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DCA6E02A1CF637001BC0AF /* MockURLSession.swift */; };
+		55DCA6E32A1CFC4D001BC0AF /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DCA6E22A1CFC4D001BC0AF /* SpyNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		55DCA6DA2A1CF479001BC0AF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		55DCA6DD2A1CF5D7001BC0AF /* ViewControllerNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNavigationTests.swift; sourceTree = "<group>"; };
 		55DCA6E02A1CF637001BC0AF /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		55DCA6E22A1CFC4D001BC0AF /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				55DCA6DD2A1CF5D7001BC0AF /* ViewControllerNavigationTests.swift */,
+				55DCA6E22A1CFC4D001BC0AF /* SpyNavigationController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				5577713A2A1B7EE3005F22E3 /* MockSignupFormModelValidator.swift in Sources */,
 				554A6F962A191C630041BA63 /* MockURLProtocol.swift in Sources */,
 				55DCA6E12A1CF637001BC0AF /* MockURLSession.swift in Sources */,
+				55DCA6E32A1CFC4D001BC0AF /* SpyNavigationController.swift in Sources */,
 				557771482A1C31BF005F22E3 /* SignupViewControllerTests.swift in Sources */,
 				5577713F2A1BC8ED005F22E3 /* MockSignupWebservice.swift in Sources */,
 				554A6F842A18FD0C0041BA63 /* SignupWebserviceTests.swift in Sources */,
