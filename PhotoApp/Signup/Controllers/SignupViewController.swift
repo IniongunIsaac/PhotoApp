@@ -45,6 +45,11 @@ extension SignupViewController: SignupViewDelegateProtocol {
     }
     
     func errorHandler(error: SignupError) {
-        //TODO:
+        let alert = UIAlertController(title: "Error", message: "Your request could not be completed at the moment", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default))
+        DispatchQueue.main.async {
+            alert.view.accessibilityIdentifier = "errorAlertDialog"
+            self.present(alert, animated: true)
+        }
     }
 }
