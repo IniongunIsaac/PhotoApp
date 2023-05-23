@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-ci-4rc">
-                                <rect key="frame" x="16" y="59" width="361" height="250"/>
+                                <rect key="frame" x="16" y="59" width="361" height="304.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-NY-JP9">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
@@ -44,6 +44,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVp-XD-8rf">
+                                        <rect key="frame" x="0.0" y="270" width="361" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign up"/>
+                                        <connections>
+                                            <action selector="signupButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kj8-dp-hKU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -61,6 +69,7 @@
                         <outlet property="lastNameTextField" destination="0oY-wr-w0A" id="KeE-Zj-cgP"/>
                         <outlet property="passwordTextField" destination="Zre-jV-quB" id="pwd-TM-DJA"/>
                         <outlet property="repeatPasswordTextField" destination="o2u-UT-GHJ" id="8gl-WP-eml"/>
+                        <outlet property="signupButton" destination="ZVp-XD-8rf" id="tKC-bx-EhJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

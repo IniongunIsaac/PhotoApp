@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SignupPresenter {
+final class SignupPresenter: SignupPresenterProtocol {
     
     private let validator: SignupFormModelValidatorProtocol
     private let webservice: SignupWebserviceProtocol
