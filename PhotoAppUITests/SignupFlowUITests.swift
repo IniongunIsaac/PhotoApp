@@ -72,6 +72,19 @@ final class SignupFlowUITests: XCTestCase {
         
         signupButton.tap()
         
+        let emailScreenshot = emailTextField.screenshot()
+        let emailAttachment = XCTAttachment(screenshot: emailScreenshot)
+        emailAttachment.name = "Screenshot of email UITextField"
+        emailAttachment.lifetime = .keepAlways
+        add(emailAttachment)
+        
+        //let currentWindowScreenshot = app.screenshot()
+        let currentWindowScreenshot = XCUIScreen.main.screenshot()
+        let currentWindowAttachment = XCTAttachment(screenshot: currentWindowScreenshot)
+        currentWindowAttachment.name = "Screenshot of current app window"
+        currentWindowAttachment.lifetime = .keepAlways
+        add(currentWindowAttachment)
+        
         XCTAssertTrue(app.alerts["errorAlertDialog"].waitForExistence(timeout: 1), "An error alert dialog was not presented when an invalid form was submitted")
     }
     
@@ -93,7 +106,7 @@ final class SignupFlowUITests: XCTestCase {
 
         signupButton.tap()
 
-        XCTAssertTrue(app.alerts["successAlertDialog"].waitForExistence(timeout: 10), "A success alert dialog was not presented when a valid form was submitted")
+        XCTAssertTrue(app.alerts["successAlertDialog"].waitForExistence(timeout: 1), "A success alert dialog was not presented when a valid form was submitted")
                 
     }
     
