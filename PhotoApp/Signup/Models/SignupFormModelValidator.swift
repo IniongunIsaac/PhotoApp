@@ -35,4 +35,13 @@ class SignupFormModelValidator: SignupFormModelValidatorProtocol {
     func doPasswordsMatch(password: String, repeatPassword: String) -> Bool {
         isPasswordValid(password) && isPasswordValid(repeatPassword) && password == repeatPassword
     }
+    
+    func throwableTextValid(_ text: String) throws -> Bool {
+        let illegalCharacters = CharacterSet(charactersIn: "{}@#$%^&,.*![]:'~`/?|+=-_)(%")
+        if text.rangeOfCharacter(from: illegalCharacters) != nil {
+            throw SignupError.illegalCharactersFound
+        }
+        
+        return !text.isEmpty
+    }
 }

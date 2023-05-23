@@ -39,4 +39,8 @@ class MockSignupFormModelValidator: SignupFormModelValidatorProtocol {
         isRepeatPasswordValidated = true
         return isRepeatPasswordValidated
     }
+    
+    func throwableTextValid(_ text: String) throws -> Bool {
+        true
+    }
 }

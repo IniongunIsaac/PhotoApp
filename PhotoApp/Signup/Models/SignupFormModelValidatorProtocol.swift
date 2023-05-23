@@ -13,4 +13,5 @@ protocol SignupFormModelValidatorProtocol {
     func isValidEmail(_ email: String) -> Bool
     func isPasswordValid(_ password: String) -> Bool
     func doPasswordsMatch(password: String, repeatPassword: String) -> Bool
+    func throwableTextValid(_ text: String) throws -> Bool
 }
