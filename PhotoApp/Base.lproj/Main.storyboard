@@ -76,6 +76,86 @@
             </objects>
             <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
         </scene>
+        <!--First View Controller-->
+        <scene sceneID="qL1-wO-N8u">
+            <objects>
+                <viewController storyboardIdentifier="FirstViewController" id="W59-QX-KEF" customClass="FirstViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwz-vz-6dy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIf-hp-dwc">
+                                <rect key="frame" x="166.66666666666666" y="408.66666666666669" width="59.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="W59-QX-KEF" eventType="touchUpInside" id="iwO-EK-FWZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vz7-2K-rVa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XIf-hp-dwc" firstAttribute="centerY" secondItem="zwz-vz-6dy" secondAttribute="centerY" id="EhX-g6-gIo"/>
+                            <constraint firstItem="XIf-hp-dwc" firstAttribute="centerX" secondItem="zwz-vz-6dy" secondAttribute="centerX" id="qaB-uV-UJ7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="f9s-A8-RrT"/>
+                    <connections>
+                        <outlet property="nextButton" destination="XIf-hp-dwc" id="Nwd-Kf-EX3"/>
+                        <segue destination="TYa-S8-pCZ" kind="show" identifier="goToSecondViewController" id="nyb-BN-H48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pg-Uc-yEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944.2748091603053" y="-9.1549295774647899"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="F3t-aW-ooN">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="TYa-S8-pCZ" customClass="SecondViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZLZ-ni-352">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNf-2N-lUl">
+                                <rect key="frame" x="101" y="415.66666666666669" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZOK-KP-bly"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fNf-2N-lUl" firstAttribute="centerY" secondItem="ZLZ-ni-352" secondAttribute="centerY" id="bh4-Fc-Dzi"/>
+                            <constraint firstItem="fNf-2N-lUl" firstAttribute="centerX" secondItem="ZLZ-ni-352" secondAttribute="centerX" id="v5e-x8-Cd9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qjr-Xw-a7A"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbN-hP-0RO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2924" y="-9"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="haO-Wv-7mm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tgv-wX-OJ0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L9A-im-1sd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W59-QX-KEF" kind="relationship" relationship="rootViewController" id="J8L-dt-RDR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NgM-WV-BOc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017.5572519083969" y="-9.1549295774647899"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
