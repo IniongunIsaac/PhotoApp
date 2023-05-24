@@ -1,0 +1,53 @@
+{
+  "configurations" : [
+    {
+      "id" : "D196A571-729A-473A-A727-6FB9E19EBF78",
+      "name" : "Test Server URL 1",
+      "options" : {
+        "environmentVariableEntries" : [
+          {
+            "key" : "signupURL",
+            "value" : "https:\/\/appsdeveloperblog.com\/api\/v2\/signup-mock-service\/users"
+          }
+        ],
+        "uiTestingScreenshotsLifetime" : "deleteOnSuccess"
+      }
+    },
+    {
+      "id" : "9F8ABBF1-1843-4D3B-B82D-87D05E20FEB3",
+      "name" : "Test Server URL 2",
+      "options" : {
+        "commandLineArgumentEntries" : [
+          {
+            "argument" : ""
+          }
+        ],
+        "environmentVariableEntries" : [
+          {
+            "key" : "signupURL",
+            "value" : "https:\/\/appsdeveloperblog.com:8080\/api\/v2\/signup-mock-service\/users"
+          }
+        ]
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PhotoApp.xcodeproj",
+      "identifier" : "554A6F452A18B79E0041BA63",
+      "name" : "PhotoApp"
+    },
+    "uiTestingScreenshotsLifetime" : "keepNever"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PhotoApp.xcodeproj",
+        "identifier" : "554A6F652A18B79F0041BA63",
+        "name" : "PhotoAppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

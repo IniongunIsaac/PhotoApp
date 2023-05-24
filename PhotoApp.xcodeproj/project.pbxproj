@@ -99,6 +99,9 @@
 		55DCA6DD2A1CF5D7001BC0AF /* ViewControllerNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNavigationTests.swift; sourceTree = "<group>"; };
 		55DCA6E02A1CF637001BC0AF /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		55DCA6E22A1CFC4D001BC0AF /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
+		55DCA6E62A1DF9BD001BC0AF /* PhotoApp-UITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PhotoApp-UITestPlan.xctestplan"; sourceTree = "<group>"; };
+		55DCA6E72A1DFC67001BC0AF /* PhotoApp-UnitTestsPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PhotoApp-UnitTestsPlan.xctestplan"; sourceTree = "<group>"; };
+		55DCA6E82A1DFD12001BC0AF /* PhotoApp-MainTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "PhotoApp-MainTestPlan.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 		554A6F3D2A18B79E0041BA63 = {
 			isa = PBXGroup;
 			children = (
+				55DCA6E82A1DFD12001BC0AF /* PhotoApp-MainTestPlan.xctestplan */,
 				554A6F482A18B79E0041BA63 /* PhotoApp */,
 				554A6F5F2A18B79F0041BA63 /* PhotoAppTests */,
 				554A6F692A18B79F0041BA63 /* PhotoAppUITests */,
@@ -164,6 +168,7 @@
 		554A6F5F2A18B79F0041BA63 /* PhotoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				55DCA6E72A1DFC67001BC0AF /* PhotoApp-UnitTestsPlan.xctestplan */,
 				55DCA6DF2A1CF623001BC0AF /* URLSession */,
 				55DCA6DC2A1CF5B8001BC0AF /* Navigation */,
 				554A6F912A1902130041BA63 /* Signup */,
@@ -174,6 +179,7 @@
 		554A6F692A18B79F0041BA63 /* PhotoAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				55DCA6E62A1DF9BD001BC0AF /* PhotoApp-UITestPlan.xctestplan */,
 				554A6F7D2A18C2F20041BA63 /* SignupFlowUITests.swift */,
 				554A6F7E2A18C2F20041BA63 /* PhotoAppUITestsLaunchTests.swift */,
 			);
